@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Photo Album</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.0.4/ng-file-upload.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.0.4/ng-file-upload-shim.js"></script>
+    <script src="/js/bundle.js" charset="utf-8"></script>
+    <!-- <script src="/js/module.js" charset="utf-8"></script>
+    <script src="/js/controllers.js" charset="utf-8"></script>
+    <script src="/js/services.js" charset="utf-8"></script> -->
+</head>
+
+<body ng-app='nameOfApp' ng-controller='mainController'>
+    <div class="container">
+        Single File Upload
+        <form ng-submit="submitFile()">
+            <button class="button" ngf-select ng-model="file" name="newFile" ngf-pattern="'*'" ngf-accept="'*'" ngf-max-size="20MB">Select</button>
+
+            <button>Upload</button>
+        </form>
+    </div>
+
+
+    <div class="container">
+        Multiple File Upload
+        <form ng-submit="submitMultipleFiles()">
+            <button class="button" ngf-multiple="true" ngf-select ng-model="newFiles" name="newFiles" ngf-pattern="'*'" ngf-accept="'*'">Select</button>
+            <button>Upload</button>
+        </form>
+    </div>
+
+    <div class="container">
+
+        <form ng-submit="retrieveFile()">
+            <input ng-model="fileToRetrieve.key" type="text" placeholder="Key Name Stored on AWS">
+            <button>Retrieve File</button>
+        </form>
+
+        <pre>{{fileReceived}}</pre>
+    </div>
+</body>
+
+</html>

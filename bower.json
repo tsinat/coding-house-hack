@@ -1,0 +1,17 @@
+{
+  "name": "gulp-test",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Tsinat Zeree <cheru87@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
