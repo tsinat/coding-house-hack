@@ -12,12 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.0.4/ng-file-upload.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.0.4/ng-file-upload-shim.js"></script>
     <script src="/js/bundle.js" charset="utf-8"></script>
-    <!-- <script src="/js/module.js" charset="utf-8"></script>
-    <script src="/js/controllers.js" charset="utf-8"></script>
-    <script src="/js/services.js" charset="utf-8"></script> -->
 </head>
 
-<body ng-app='nameOfApp' ng-controller='mainController'>
+<body ng-app='nameOfApp'>
     <div class="container">
         Single File Upload
         <form ng-submit="submitFile()">
@@ -45,6 +42,20 @@
 
         <pre>{{fileReceived}}</pre>
     </div>
+
+<!-- Computer Vision samele data -->
+    <form ng-controller='visionCtrl' ng-submit='submitVision()'>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Image:</label>
+            <input type="url" class="form-control" ng-model='imageUrl' placeholder="Email">
+        </div>
+
+        <button type="submit" class="btn btn-default">Check Sample</button>
+    </form>
+    <pre>
+        {{myData}}
+    </pre>
+
 </body>
 
 </html>

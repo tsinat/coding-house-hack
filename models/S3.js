@@ -15,7 +15,6 @@ var async = require("async");
 
 
 var aws_s3 = {};
-//to upload a file to the AWS bucket:
 
 aws_s3.storeOn = function (dataToStore, callback) {
    let key = dataToStore.originalname.split(".")[0];

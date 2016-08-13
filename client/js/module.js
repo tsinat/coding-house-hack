@@ -54,3 +54,26 @@ app.controller("mainController", function ($scope, Upload, $http) {
 
 
 });
+
+app.controller('visionCtrl', function($scope, $http){
+
+    $scope.submitVision = () => {
+        console.log($scope.imageUrl);
+        var obj = {
+            url: $scope.imageUrl
+        }
+        $http.post('/api/computerVisions', obj)
+            .then(res => {
+                // console.log(res);
+                updateData(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+    function updateData(value){
+        console.log(value);
+        $scope.myData = value;
+    }
+
+});
