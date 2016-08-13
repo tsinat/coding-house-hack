@@ -52,8 +52,6 @@ router.put("/getFromBucket", function(request, response) {
     })
 });
 
-//for testing the file system!!!!!
-
 router.get("/getForm", function(request, response) {
             console.log('routing')
 
